@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Nhà sách ABC</title>
+    <link rel="stylesheet" type="text/css" href="./Script/Dangky.css"> 
+    <script Language="JavaScript">
+        function KiemTraThongTin(){
+        var hoTen=document.getElementById("hoten");
+         if (hoTen.value==""){
+         alert("Vui lòng nhập Họ tên.");
+         hoTen.focus();
+         return false;}
+         var email=window.document.dangky.txtEmail;
+        re=/\w+@\w+\.\w+/;
+        if (email.value==""){
+        alert("Bạn chưa nhập Email.") ;
+        email.focus();
+        return false;
+        }
+        else
+        if(re.test(email.value)==false){
+        alert("Email không đúng định dạng!");
+        email.focus();
+        return false;
+        }
+        var mk=document.getElementById("matkhau");
+        var nmk=document.getElementById("nhaplaimatkhau");
+        if(mk.value!=nmk.value){
+        alert("Mật khẩu phải trùng với nhập lại mật khẩu");
+        return false;
+        }
+        alert("Đăng ký thành công! Xin chúc mừng.");
+        return true;	 
+     }
+     
+        </script>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="Images/LOGO.jpg">
+        </div>
+        <div id="dn">
+            <img src="./Images/dangnhap.jpg">
+            <a href="Dangnhap.html">Đăng nhập</a>
+            | <a href="Dangky.html">Đăng ký</a>
+            <img src="./Images/Giohang.gif">
+            <a href="#">Giỏ hàng(Trống)</a>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="Trangchu.html">TRANG CHỦ</a></li>
+            <li><a href="Gioithieu.html">GIỚI THIỆU</a></li>
+            <li><a href="Lienhe.html">LIÊN HỆ</a></li>
+        </ul>
+        <div id="subnav">
+            <div>
+                <input type="text" size="36" name="tsearch" placeholder="Hãy nhập tên sách cần tìm...">
+                <input type="submit" value="Tìm Sách" title="Tìm Sách">
+            </div>
+        </div>
+        
+    </nav>
+    <div id="body"> 
+        <article>
+            <aside id="left">
+                <div>
+                    <p>SÁCH THEO CHỦ ĐỀ</p>
+                    <ul type="square">
+                        <li><a href="#">Ngoại ngữ</a></li>
+                        <li><a href="#">Công nghệ thông tin</a></li>
+                        <li><a href="#">Luật</a></li>
+                        <li><a href="#">Văn học</a></li>
+                        <li><a href="#">Khoa học kỹ thuật<tbody></tbody></a></li>
+                        <li><a href="#">Nông nghiệp</a></li>
+                        <li><a href="#">Lịch sử, địa lý</a></li>
+                        <li><a href="#">Kinh tế</a></li>
+                        <li><a href="#">Nghệ thuật sống</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p>SÁCH THEO NHÀ XUẤT BẢN</p>
+                    <UL type="square">
+                        <li><a href="#">Nhà xuất bản Trẻ</a></li>
+                        <li><a href="#">NXB Thống kê</a></li>
+                        <li><a href="#">Kim Đồng</a></li>
+                        <li><a href="#">Đại học quốc gia</a></li>
+                        <li><a href="#">Văn hóa nghệ thuật</a></li>
+                        <li><a href="#">Văn hóa</a></li>
+                        <li><a href="#">Lao động - Xã hội</a></li>
+                        <li><a href="#">Khoa học & Kỹ Thuẩ</a></li>
+                    </UL>
+                </div>
+            </aside>
+            <section>
+                <table>
+                    <form onSubmit="KiemTraThongTin()" method="post" name="dangky" action="#">
+                        <tr id="tr1">
+                            <td id="tieude">ĐĂNG KÝ THÀNH VIÊN</td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <fieldset>
+                                <legend id="legend1"><b>Thông tin cá nhân</b></legend>
+                                <table>
+                                    <tr>
+                                        <td id="o3">Họ và tên:</td>
+                                        <td id="o1"><input type="text" id="hoten" name="txtHoTen"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="o3">Ngày sinh:</td>
+                                        <td id="o1"> <input type="number" min="1" max="31">
+                                            Tháng: <input type="number" min="1" max="12">
+                                            Năm: <input type="text" id="nam" name="txtNam"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="o3">Giới tính:</td>
+                                        <td id="o1"><input type="radio" name="gender" value="Nam">Nam
+                                            <input type="radio" name="gender" value="Nữ">Nữ</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="o3">Địa chỉ:</td>
+                                        <td id="o1"><textarea name="" id="" cols="30" rows="3"></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="o3">Điện thoại:</td>
+                                        <td id="o1"><input type="tel"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="o3">Email:</td>
+                                        <td id="o1"><input type="email" id="email" name="txtEmail"></td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <fieldset>
+                                    <legend id="legend1"><b>Thông tin đăng nhập</b></legend>
+                                    <table>
+                                        <tr>
+                                            <td id="o4">Tên đăng nhập:</td>
+                                            <td id="o2"><input type="text" id="tendangnhap" name="txtTenDangNhap" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="o4">Mật khẩu:</td>
+                                            <td id="o2"><input type="password" id="matkhau" name="txtMatKhau" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="o4">Nhập lại mật khẩu:</td>
+                                            <td id="o2"><input type="password" id="nhaplaimatkhau" name="txtNhapLaiMatKhau" required></td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" id="conlai2"><input type="submit" value="Đăng ký" name="" onClick="KiemTra()">&nbsp;<input type="reset"name="" value="Hủy"></td>
+                        </tr>
+                    </form>
+                </table>
+            </section>
+            <aside id="right">
+                <div id="sachbannhieu">
+                    <p>SÁCH BÁN NHIỀU</p>
+                    <marquee direction="up" scroollamount="3" scrolldelay="100" onmousemove="stop()" onmouseout="start()">
+                        <p><a href="#"><img src="Images/TH008.jpg">Thủ thuật lập trình Visual Basic 6</a></p>
+                        <p><a href="#"><img src="Images/TH005.jpg">Hướng Dẫn Tự Học Photoshop CS (Photosshop 6.0)</a></p>
+                        <p><a href="#"><img src="Images/TH002.jpg">Căn Bản Về Photoshop CS Tinh Chỉnh Và Xử Lý</a></p>
+                        <p><a href="#"><img src="Images/THCB.jpg">Tin Học Cơ Bản</a></p>
+                    </marquee>
+                </div>
+                <div id="lienketwebsite">
+                    <p>LIÊN KẾT WEBSITE</p>
+                    <select onchange="window.open(this.options[this.selectedIndex].value,'_blank')">
+                        <option selected>--- Chọn trang liên kết ---</option>
+                        <option value="http://www.tdmu.edu.vn">ĐH THỦ DẦU MỘT</option>
+                        <option value="http://www.iteee.tdmu.edu.vn">KHOA KT-CN</option>
+                </select>
+                </div>
+                <div id="thongketruycap">
+                    <p>HỆ THỐNG TRUY CẬP</p>
+                    <h4>Tổng truy cập:160</h4>
+                    <h4>Đang online:3</h4>
+                </div>
+            </aside>
+        </article>
+    </div>
+    <footer>
+        <p>&copy;2016 - Nhà sách ABC, Allright Reserved</p>
+        <p>Website được phát triển để sử dụng làm bài tập thực hành môn Thiết kế và Lập trình web</p>
+        <p>Email:abc.thudaumotuniversity@gmail.com</p>
+    </footer>
+</body>
+</html>
